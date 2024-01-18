@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink as RRNavLink } from "react-router-dom";
+import { getBikesInShopCount } from "../managers/bikeManager";
 import {
   Button,
   Collapse,
@@ -21,6 +22,7 @@ export default function NavBar({ loggedInUser, setLoggedInUser }) {
 
   const getInventory = () => {
     //implement functionality here....
+    getBikesInShopCount().then(setInventory);
   };
 
   useEffect(() => {
